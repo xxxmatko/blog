@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "restore",
+            "type": "npm",
+            "script": "install",
+            "group": "build",
+            "presentation": {
+				"panel": "new"
+			},
+            "problemMatcher": []
+        },
+		{
+            "label": "run",
+            "type": "shell",
+            "windows": {
+                "command": ".\\run.url"
+            },
+            "group": "build",
+            "presentation": {
+				"panel": "new"
+			},
+            "problemMatcher": []
+        }
+    ]
+}
