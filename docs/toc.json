@@ -1,6 +1,6 @@
 {
-	value: [{
-		path: "lorem-ipsum-dolor",
-		date: "2023-04-07T17:50:00.000Z"
+	"value": [{
+		"path": "lorem-ipsum-dolor",
+		"date": "2023-04-07T17:50:00.000Z"
 	}]
 }
