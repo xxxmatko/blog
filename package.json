@@ -7,6 +7,8 @@
     },
     "dependencies": {
         "material-components-web": "14.0.0",
-        "@openfonts/roboto_latin-ext": "1.44.1"
+        "@openfonts/roboto_latin-ext": "1.44.1",
+        "knockout": "3.5.1",
+        "moment": "2.29.4"
     }
 }

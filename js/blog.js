@@ -3,7 +3,55 @@
 
     var doc = global.document;
     var mdc = global.mdc;
-    var toc = [];
+    var ko = global.ko;
+    var moment = global.moment;
+
+    //#endregion
+
+
+    //#region [ Constructors ]
+
+    /**
+     * Creates new instance of the Blog.
+     */
+    var Blog = function (args) {
+        console.debug("Blog()");
+
+        this.moment = args.moment;
+
+        this.tocUrl = "https://api.github.com/repos/xxxmatko/blog/contents/docs/toc.json";
+        this.toc = ko.observableArray([]);
+    };
+
+    //#endregion
+
+
+    //#region [ Methods : Public ]
+
+    /**
+     * Loads the TOC content.
+     */
+    Blog.prototype.loadToc = function () {
+        console.debug("Blog : loadToc()");
+
+        return fetch(this.tocUrl, {
+            method: "GET",
+            cache: "no-cache",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/vnd.github.raw",
+                "X-GitHub-Api-Version": "2022-11-28"
+            }
+        }).then(function(response) {
+            if(response.ok) {
+                return response.json();
+            }
+
+            return null;
+        }).then(function (response) {
+            return !response || !response.value ? [] : response.value;
+        }).then(this.toc);
+    };
 
     //#endregion
 
@@ -24,34 +72,6 @@
         }
     };
 
-
-    /**
-     * Loads toc content.
-     */
-    function loadToc() {
-        return fetch("https://api.github.com/repos/xxxmatko/blog/contents/docs/toc.json", {
-            method: "GET",
-            cache: "no-cache",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/vnd.github.raw",
-                "X-GitHub-Api-Version": "2022-11-28"
-            }
-        }).then(function(response) {
-            if(response.ok) {
-                return response.json();
-            }
-
-            return null;
-        }).then(function (response) {
-            if(!response) {
-                return;
-            }
-
-            toc = response.value;
-        });
-    };
-
     //#endregion
 
 
@@ -62,12 +82,14 @@
      */
     ready(function () {
         mdc.autoInit();
+        moment.locale("sk");
 
-        loadToc().then(function() {
-            toc.forEach(function(article) {
-                console.warn(article);
-            });
-        });        
+        var blog = new Blog({
+            moment: moment
+        });
+        ko.applyBindings(blog, doc.body);
+
+        blog.loadToc();
     });
 
     //#endregion    

@@ -48,8 +48,8 @@ body {
 
 .thumb__tags .mdc-chip {
     pointer-events: none;
-    background-color: var(--mdc-theme-secondary);
-    color: var(--mdc-theme-text-primary-on-dark);
+    background-color: var(--mdc-theme-text-hint-on-background);
+    color: var(--mdc-theme-primary);
     border-radius: 4px;
     height: 24px;
     font-size: 12px;
@@ -61,6 +61,8 @@ body {
 }
 
 .thumb__actions {
+    --mdc-theme-primary: var(--mdc-theme-secondary);
+
     padding: 8px 16px;
     display: flex;
     flex-direction: row;
