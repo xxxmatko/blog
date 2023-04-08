@@ -2,10 +2,12 @@
 	"value": [{
 		"title": "Lorem ipsum dolor",
 		"path": "lorem-ipsum-dolor",
-		"date": "2023-04-07T17:50:00.000Z"
+		"date": "2023-04-07T17:50:00.000Z",
+		"tags": ["bookcase", "c#", "javascript"]
 	}, {
 		"title": "Nulla condimentum ut",
 		"path": "lorem-ipsum-dolor",
-		"date": "2023-04-07T14:50:00.000Z"
+		"date": "2023-04-07T14:50:00.000Z",
+		"tags": ["c#", "javascript", ".net", "ms sql"]
 	}]
 }
