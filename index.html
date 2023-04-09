@@ -39,10 +39,13 @@
     </script>
 	<div class="mdc-layout-grid container">
         <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-                <h3 class="title mdc-typography--headline3">Martin Sutka</h3>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12" style="text-align: center">
+                <img class="avatar" src="img/avatar.jpg" alt="Martin Sutka">
+                <h3 class="title mdc-typography--headline3">
+                    Martin Sutka
+                </h3>
             </div>
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12" style="display: none" data-bind="visible: route().length">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12" style="display: none" data-bind="visible: article().length">
                 <button class="mdc-button"
                         data-bind="click: function() { $root.global.location.hash = ''; }">
                     <div class="mdc-button__ripple"></div>
@@ -53,6 +56,14 @@
             <!-- ko if: article().length -->
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 article" style="display: none" data-bind="visible: article().length, html: article"></div>
             <!-- /ko -->
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12" style="display: none" data-bind="visible: article().length">
+                <button class="mdc-button"
+                        data-bind="click: function() { $root.global.location.hash = ''; }">
+                    <div class="mdc-button__ripple"></div>
+                    <i class="material-icons mdc-button__icon">west</i>
+                    <span class="mdc-button__label">späť</span>
+                </button>
+            </div>
             <!-- ko if: !route().length -->
                 <!-- ko foreach: toc -->
                     <!-- ko template: { name: "thumb-template", data: $data } --><!-- /ko -->
@@ -60,6 +71,65 @@
             <!-- /ko -->
         </div>
     </div>
+    <footer class="mdc-layout-grid footer" style="margin-top: 32px;display: none" data-bind="visible: route().length || toc().length">
+        <div class="mdc-layout-grid__inner container">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+                <div class="mdc-layout-grid__inner">
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h5>Location</h5>
+                        <p>Bratislava, Slovakia</p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h5>Around the Web</h5>
+                        <p class="footer__links">
+                            <a href="https://www.linkedin.com/in/martin-sutka-2641a989">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M21,21H17V14.25C17,13.19 15.81,12.31 14.75,12.31C13.69,12.31 13,13.19 13,14.25V21H9V9H13V11C13.66,9.93 15.36,9.24 16.5,9.24C19,9.24 21,11.28 21,13.75V21M7,21H3V9H7V21M5,3A2,2 0 0,1 7,5A2,2 0 0,1 5,7A2,2 0 0,1 3,5A2,2 0 0,1 5,3Z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/xxxmatko">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://stackoverflow.com/users/2519175/xxxmatko">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M17.36,20.2V14.82H19.15V22H3V14.82H4.8V20.2H17.36M6.77,14.32L7.14,12.56L15.93,14.41L15.56,16.17L6.77,14.32M7.93,10.11L8.69,8.5L16.83,12.28L16.07,13.9L7.93,10.11M10.19,6.12L11.34,4.74L18.24,10.5L17.09,11.87L10.19,6.12M14.64,1.87L20,9.08L18.56,10.15L13.2,2.94L14.64,1.87M6.59,18.41V16.61H15.57V18.41H6.59Z"></path>
+                                </svg>
+                            </a>
+                            <a href="http://blog.vyvojari.sk/xxxmatko/default.aspx">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M14,13H9.95A1,1 0 0,0 8.95,14A1,1 0 0,0 9.95,15H14A1,1 0 0,0 15,14A1,1 0 0,0 14,13M9.95,10H12.55A1,1 0 0,0 13.55,9A1,1 0 0,0 12.55,8H9.95A1,1 0 0,0 8.95,9A1,1 0 0,0 9.95,10M16,9V10A1,1 0 0,0 17,11A1,1 0 0,1 18,12V15A3,3 0 0,1 15,18H9A3,3 0 0,1 6,15V8A3,3 0 0,1 9,5H13A3,3 0 0,1 16,8M20,2H4C2.89,2 2,2.89 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z"></path>
+                                </svg>
+                            </a>
+                            <a href="mailto:martin.sutka@gmail.com">
+                                <svg viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M20,18H18V9.25L12,13L6,9.25V18H4V6H5.2L12,10.25L18.8,6H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"></path>
+                                </svg>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                        <h5>Personal statement</h5>
+                        <p style="text-align: center">
+                            « if it's important you'll find a way, if it's not, you'll find an excuse »
+                            <br>
+                            <small>
+                                <b>Ryan Blair</b>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer class="mdc-layout-grid footer footer--darker" style="display: none" data-bind="visible: route().length || toc().length">
+        <div class="mdc-layout-grid__inner container">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 footer__copyright">
+                copyright © <a href="https://xxxmatko.github.io" target="_blank">xxxmatko</a> 2023 
+            </div>
+        </div>
+    </footer>
     <script src="js/libs/material-components-web.min.js"></script>
     <script src="js/libs/knockout-latest.js"></script>
     <script src="js/libs/moment-with-locales.min.js"></script>
