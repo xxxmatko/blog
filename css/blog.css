@@ -69,6 +69,18 @@ body {
     justify-content: flex-end;
 }
 
+.article__title {
+    color: var(--mdc-theme-primary);
+    margin: 0;
+}
+
+.article__title--center {
+    text-align: center;
+    background-color: var(--mdc-theme-text-hint-on-background);
+    border-radius: 4px;
+    padding: 16px;
+}
+
 .container {
     margin: 0 auto;
     max-width: 1280px;

@@ -7,8 +7,9 @@
     <meta name="keywords" content="technology, music, programming, fitness, movies, gis, developer"/>
     <meta name="author" content="Martin Šutka"/>    
     <title>blog &#183; xxxmatko</title>
-    <link rel="icon" href="img/blog.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="img/blog.ico" type="image/x-icon" />    
+    <link href="img/blog.ico" rel="icon" type="image/x-icon" />
+    <link href="img/blog.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />    
     <link href="css/openfonts-roboto.css" rel="stylesheet" />
     <link href="css/material-components-web.min.css" rel="stylesheet" />
     <link href="css/mosk.css" rel="stylesheet" />
@@ -41,14 +42,17 @@
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
                 <h3 class="title mdc-typography--headline3">Martin Sutka</h3>
             </div>
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12" style="display: none"
-                 data-bind="visible: route().length">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12" style="display: none" data-bind="visible: route().length">
                 <button class="mdc-button"
                         data-bind="click: function() { $root.global.location.hash = ''; }">
                     <div class="mdc-button__ripple"></div>
+                    <i class="material-icons mdc-button__icon">west</i>
                     <span class="mdc-button__label">späť</span>
                 </button>
             </div>
+            <!-- ko if: article().length -->
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 article" style="display: none" data-bind="visible: article().length, html: article"></div>
+            <!-- /ko -->
             <!-- ko if: !route().length -->
                 <!-- ko foreach: toc -->
                     <!-- ko template: { name: "thumb-template", data: $data } --><!-- /ko -->

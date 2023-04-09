@@ -21,8 +21,12 @@
         this.moment = args.moment;
 
         this.route = ko.observable(args.route || "");
+        this.article = ko.observable("");
+
         this.tocUrl = args.tocUrl;
         this.toc = ko.observableArray([]);
+
+        this._routeChangedSubscribe = ko.computed(this._routeChanged, this);
     };
 
     //#endregion
@@ -65,6 +69,37 @@
      */
     Blog.prototype._onHashChanged = function(e) {
         this.route((this.global.location.hash || "").replace(/^#/gi,""));
+    };
+
+
+    /**
+     * Handles route change event.
+     */
+    Blog.prototype._routeChanged = function () {
+        var route = this.route();
+
+        if(!route) {
+            this.article("");
+            return;
+        }
+
+        return fetch("https://api.github.com/repos/xxxmatko/blog/contents/docs/" + route + "/index.md", {
+            method: "GET",
+            cache: "no-cache",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/vnd.github.html",
+                "X-GitHub-Api-Version": "2022-11-28"
+            }
+        }).then(function(response) {
+            if(response.ok) {
+                return response.text();
+            }
+
+            return null;
+        }).then(function (response) {
+            return !response ? "<h4 class='article__title article__title--center mdc-typography--headline4'>Stránka, ktorú hľadáte neexistuje</h4>" : response;
+        }).then(this.article);
     };
 
     //#endregion
