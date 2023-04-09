@@ -17,9 +17,11 @@
     var Blog = function (args) {
         console.debug("Blog()");
 
+        this.global = args.global;
         this.moment = args.moment;
 
-        this.tocUrl = "https://api.github.com/repos/xxxmatko/blog/contents/docs/toc.json";
+        this.route = ko.observable(args.route || "");
+        this.tocUrl = args.tocUrl;
         this.toc = ko.observableArray([]);
     };
 
@@ -56,6 +58,18 @@
     //#endregion
 
 
+    //#region [ Event Handlers ]
+
+    /**
+     * Handles hash change event.
+     */
+    Blog.prototype._onHashChanged = function(e) {
+        this.route((this.global.location.hash || "").replace(/^#/gi,""));
+    };
+
+    //#endregion
+
+
     //#region [ Methods ]
 
     /**
@@ -84,12 +98,18 @@
         mdc.autoInit();
         moment.locale("sk");
 
-        var blog = new Blog({
-            moment: moment
+        var blog = global.blog = new Blog({
+            global: global,
+            moment: moment,
+            route: (global.location.hash || "").replace(/^#/gi,""),
+            tocUrl: "https://api.github.com/repos/xxxmatko/blog/contents/docs/toc.json"
         });
         ko.applyBindings(blog, doc.body);
 
         blog.loadToc();
+
+        // Handle events
+        global.addEventListener("hashchange", blog._onHashChanged.bind(blog),false);
     });
 
     //#endregion    
