@@ -99,7 +99,11 @@
             return null;
         }).then(function (response) {
             return !response ? "<h4 class='article__title article__title--center mdc-typography--headline4'>Stránka, ktorú hľadáte neexistuje</h4>" : response;
-        }).then(this.article);
+        }).then(this.article).then(function() {
+            setTimeout(function() {
+                doc.querySelector("article").scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+            }, 100);
+        });
     };
 
     //#endregion
