@@ -128,14 +128,35 @@ body {
     margin: 0;
 }
 
+.article article p > code {
+    background-color: var(--mdc-theme-text-hint-on-background);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--mdc-theme-primary);
+}
+
+.article article pre {
+    background-color: var(--mdc-theme-text-hint-on-background);
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
 .article article strong {
     font-weight: 500;
-    color: var(--mdc-theme-secondary);
 }
 
 .article article em {
     font-weight: 400;
-    color: var(--mdc-theme-secondary);
+}
+
+.article article em:before {
+    content: '"';
+}
+
+.article article em:after {
+    content: '"';
 }
 
 .article article h1:first-child {
