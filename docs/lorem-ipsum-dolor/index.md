@@ -26,6 +26,26 @@ puts markdown.to_html
 
 Etiam pretium quam vitae libero maximus, vel ullamcorper urna fermentum. Vestibulum lacinia mi at condimentum accumsan. Morbi nec volutpat lectus. In et eros ac libero fermentum mattis nec eget mi. Fusce ut metus eu justo dignissim congue. In hac habitasse platea dictumst. Cras porta libero nec ipsum commodo, nec interdum elit hendrerit. Nam eget est a felis fermentum hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent interdum ante eget malesuada malesuada.
 
+This site was built using [GitHub Pages](https://pages.github.com/).
+
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
+
+List:
+- George Washington
+* John Adams
++ Thomas Jefferson
+
+Nested list:
+1. First list item
+1. First list item
+    - First nested list item
+        - Second nested list item
+
+Task list:
+- [x] #739
+- [ ] https://github.com/octo-org/octo-repo/issues/740
+- [ ] Add delight to the experience when all tasks are complete :tada:
+
 
 ### Vestibulum nisi erat
 
