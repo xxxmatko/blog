@@ -88,6 +88,33 @@ body {
     color: var(--mdc-theme-primary);
 }
 
+.article article h3 {
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    line-height: 32px;
+    color: var(--mdc-theme-primary);
+}
+
+.article article h4 {
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.15px;
+    line-height: 28px;
+    color: var(--mdc-theme-primary);
+}
+
+.article article h5 {
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    line-height: 20px;
+    color: var(--mdc-theme-primary);
+}
+
 .article article p {
     font-family: "Roboto";
     font-size: 16px;
