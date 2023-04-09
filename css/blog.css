@@ -18,6 +18,7 @@ body {
     text-align: center;
     font-size: 68px;
     color: var(--mdc-theme-primary);
+    line-height: 1em;
 }
 
 .title:before {
@@ -67,6 +68,40 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+.article article h1 {
+    font-family: "Roboto";
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    line-height: 40px;
+    color: var(--mdc-theme-primary);
+}
+
+.article article h2 {
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 32px;
+    color: var(--mdc-theme-primary);
+}
+
+.article article p {
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+}
+
+.article article h1:first-child {
+    margin-top: 0;
+}
+
+.article article a.anchor {
+    display: none;
 }
 
 .article__title {
