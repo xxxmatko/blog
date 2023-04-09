@@ -6,6 +6,21 @@ Lorem ipsum **dolor sit** amet, *consectetur* adipiscing elit. In id tincidunt a
 
 Suspendisse dictum neque ut tortor sagittis, quis condimentum ipsum aliquam.
 
+Use `git status` to list all new or modified files that haven't yet been committed.
+
+Some basic Git commands are:
+```
+git status
+git add
+git commit
+```
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
 
 ## Etiam pretium 
 

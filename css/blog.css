@@ -117,6 +117,17 @@ body {
     line-height: 24px;
 }
 
+.article article blockquote {
+    background-color: var(--mdc-theme-text-hint-on-background);
+    margin: 16px 0;
+    padding: 16px;
+    border-left: 4px solid var(--mdc-theme-primary);
+}
+
+.article article blockquote > p {
+    margin: 0;
+}
+
 .article article strong {
     font-weight: 500;
     color: var(--mdc-theme-secondary);
