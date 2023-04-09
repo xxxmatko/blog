@@ -143,6 +143,15 @@ body {
     border-radius: 4px;
 }
 
+.article article a {
+    color: var(--mdc-theme-secondary);
+}
+
+.article article ul.contains-task-list {
+    padding-left: 18px;
+    list-style-type: none;
+}
+
 .article article strong {
     font-weight: 500;
 }
