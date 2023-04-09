@@ -71,7 +71,6 @@ body {
 }
 
 .article article h1 {
-    font-family: "Roboto";
     font-size: 34px;
     font-weight: 400;
     letter-spacing: 0.25px;
@@ -80,7 +79,6 @@ body {
 }
 
 .article article h2 {
-    font-family: "Roboto";
     font-size: 24px;
     font-weight: 400;
     letter-spacing: normal;
@@ -89,7 +87,6 @@ body {
 }
 
 .article article h3 {
-    font-family: "Roboto";
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0.25px;
@@ -98,7 +95,6 @@ body {
 }
 
 .article article h4 {
-    font-family: "Roboto";
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.15px;
@@ -107,7 +103,6 @@ body {
 }
 
 .article article h5 {
-    font-family: "Roboto";
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.4px;
@@ -116,11 +111,20 @@ body {
 }
 
 .article article p {
-    font-family: "Roboto";
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.5px;
     line-height: 24px;
+}
+
+.article article strong {
+    font-weight: 500;
+    color: var(--mdc-theme-secondary);
+}
+
+.article article em {
+    font-weight: 400;
+    color: var(--mdc-theme-secondary);
 }
 
 .article article h1:first-child {
