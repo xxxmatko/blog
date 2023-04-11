@@ -100,3 +100,8 @@ Položka `files` definuje zoznam súborov, ktoré majú byť súčasťou balíč
 ## Vytvorenie inštalačného balíčka
 
 Po stlačení klávesovej skratky `Ctrl + Shift + B` zvolíme možnosť **build**, čím sa spustí build, ktorého výstupom bude inštalačný balíček - súbor s príponou `.vsix`. Následne je možné súbor nahrať do DevOps, prípadne do [Marketplace](https://marketplace.visualstudio.com/manage/createpublisher).
+
+
+## Odkazy
+
+* [Add a dashboard widget](https://learn.microsoft.com/en-us/azure/devops/extend/develop/add-dashboard-widget?view=azure-devops)
