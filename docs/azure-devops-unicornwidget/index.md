@@ -168,4 +168,7 @@ Po stlačení klávesovej skratky `Ctrl + Shift + B` zvolíme možnosť **build*
 
 ## Odkazy
 
-[Add a dashboard widget](https://learn.microsoft.com/en-us/azure/devops/extend/develop/add-dashboard-widget?view=azure-devops)
+[Add a dashboard widget](https://learn.microsoft.com/en-us/azure/devops/extend/develop/add-dashboard-widget?view=azure-devops)    
+[Extension manifest reference](https://learn.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops)    
+[Extensibility points](https://learn.microsoft.com/en-us/azure/devops/extend/reference/targets/overview?view=azure-devops)    
+[Zdrojový kód widgetu](https://github.com/slovanet/azure-devops-unicornwidget)
