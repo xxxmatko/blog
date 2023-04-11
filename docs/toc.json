@@ -1,5 +1,11 @@
 {
 	"value": [{
+		"title": "Ako zmeniť zobrazenie výstupného HTML pre Azure DevOps Wiki",
+		"description": "Ak chceme ovplyvniť spôsob zobrazenia výstupného HTML, tak je to možné docieliť úpravou niektorého zo statických css súborov.",
+		"path": "devops-zmena-zobrazenia-wiki",
+		"date": "2023-03-21T12:00:00.000Z",
+		"tags": ["azure", "devops", "wiki", "css", "html"]
+	}, {
 		"title": "Geografické informačné systémy (CodeCon 2014)",
 		"description": "Dňa 20. 9. 2014 sa v Bratislave konala IT vývojárska konferencia CodeCon 2014 určená všetkým študentom, vývojárom a architektom v IT priemysle.",
 		"path": "codecon-2014",
