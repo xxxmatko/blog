@@ -203,13 +203,20 @@ body {
     margin: 0;
 }
 
-.article article p > code {
+.article article p > code,
+.article article ul code,
+.article article ol code {
     background-color: var(--mdc-theme-text-hint-on-background);
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: 600;
     font-size: 14px;
     color: var(--mdc-theme-primary);
+}
+
+.article article ul,
+.article article ol {
+    line-height: 24px;
 }
 
 .article article pre {
