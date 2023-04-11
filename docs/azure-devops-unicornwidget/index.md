@@ -13,19 +13,19 @@ V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konk
 
 ```
 ├─── .vscode
-│   ├─── settings.json
-│   └─── tasks.json
-├─── grunt                      // Grunt build tasky 
-├─── html
-│   └─── unicornwidget.html     // HTML stránka pre widget
-├─── img
-├─── js
-│   └─── unicornwidget.js
-├─── less
-│   └─── unicornwidget.less
-├─── extension.json             // Manifest pre extension
-├─── gruntfile.js
-└─── package.json
+│  ├── settings.json
+│  └── tasks.json
+├── grunt                      // Grunt build tasky 
+├── html
+│  └── unicornwidget.html     // HTML stránka pre widget
+├── img
+├── js
+│  └── unicornwidget.js
+├── less
+│  └── unicornwidget.less
+├── extension.json             // Manifest pre extension
+├── gruntfile.js
+└── package.json
 ```
 
 
