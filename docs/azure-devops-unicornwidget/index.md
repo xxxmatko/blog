@@ -11,7 +11,7 @@ V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konk
 
 Štruktúra projektu je nasledovná:
 
-```
+```json
 ├─ .vscode
 │  ├─ settings.json
 │  └─ tasks.json
