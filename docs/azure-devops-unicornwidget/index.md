@@ -15,15 +15,15 @@ V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konk
 ├── .vscode
 │  ├── settings.json
 │  └── tasks.json
-├── grunt                      // Grunt build tasky 
+├── grunt                   // Grunt build tasky 
 ├── html
-│  └── unicornwidget.html     // HTML stránka pre widget
+│  └── unicornwidget.html   // HTML stránka pre widget
 ├── img
 ├── js
 │  └── unicornwidget.js
 ├── less
 │  └── unicornwidget.less
-├── extension.json             // Manifest pre extension
+├── extension.json          // Manifest pre extension
 ├── gruntfile.js
 └── package.json
 ```
