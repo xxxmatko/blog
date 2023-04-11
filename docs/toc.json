@@ -1,7 +1,7 @@
 {
 	"value": [{
 		"title": "Unicorn widget alebo ako začať s vývojom rozšírení pre Azure DevOps",
-		"description": "Dashboard widget-y sa implementujú ako contributions v rámci extension framework-u. Jedno rozšírenie môže obsahovať aj viac takýchto contributions.	V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konkrétne widget pre dashboard.",
+		"description": "Dashboard widget-y sa implementujú v rámci extension framework-u. V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konkrétne widget pre dashboard.",
 		"path": "azure-devops-unicornwidget",
 		"date": "2023-04-10T12:00:00.000Z",
 		"tags": ["azure", "devops", "javascript", "css", "html", "widget", "sdk", "extension"]
