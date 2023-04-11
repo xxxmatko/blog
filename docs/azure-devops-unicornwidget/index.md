@@ -97,6 +97,70 @@ Každa položka v zozname `contributions` definuje nasledovné [vlastnosti](http
 Položka `files` definuje zoznam súborov, ktoré majú byť súčasťou balíčka a dostupné prostredníctvom URL adresy.
 
 
+## HTML stránka - unicornwidget.html
+
+HTML stránka definuje UI layout a obsahuje referencie na css a javascript súbory. Referencia na tento súbor je definovaná v manifeste v atribúte `contributions.properties.uri`.
+
+HTML stránka sa pri zobrazení načítava prostredníctvom **iframe**, z čoho plynú aj určité obmedzenia.
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <!-- Referencia na unicornwidget.css -->
+        <link href="../css/#{Extension.Id}#.css?v=#{Project.AssemblyInfo.Version}#" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="widget unicorn"></div>
+        <!-- Referencia na SDK -->
+        <script src="../js/libs/vss.js"></script>
+        <!-- Referencia na unicornwidget.js -->
+        <script src="../js/#{Extension.Id}#.js?v=#{Project.AssemblyInfo.Version}#"></script>
+    </body>
+</html>
+```
+
+## Javascript - unicornwidget.js
+
+Javascript zabezpečuje inicializáciu widgetu a obsahuje aj samotnú biznis logiku. Nemusí byť nutne umiestnený v samostatnom súbore. Zároveň notifikuje extension framework o výsledku inicializácie. 
+
+```js
+(function (root, factory) {
+    factory(root.VSS);
+}(typeof self !== "undefined" ? self : this, function (vss) {
+    //#region [ Initialization ]
+
+    vss.init({                        
+        explicitNotifyLoaded: true,
+        usePlatformStyles: true
+    });
+    
+    vss.require([
+        "TFS/Dashboards/WidgetHelpers"
+    ], function (WidgetHelpers) {
+        var webContext = vss.getWebContext();
+
+        // Vytvorenie modelu
+        var model = new Model({
+            projectId: webContext.project.id,
+            collectionUri: webContext.collection.uri,
+            widgetHelpers: WidgetHelpers
+        });
+
+        // Registrácia widgetu
+        vss.register("unicornwidget", function () {
+            return model;
+        });
+
+        vss.notifyLoadSucceeded();
+    });
+
+    //#endregion
+}));
+```
+
+
 ## Vytvorenie inštalačného balíčka
 
 Po stlačení klávesovej skratky `Ctrl + Shift + B` zvolíme možnosť **build**, čím sa spustí build, ktorého výstupom bude inštalačný balíček - súbor s príponou `.vsix`. Následne je možné súbor nahrať do DevOps, prípadne do [Marketplace](https://marketplace.visualstudio.com/manage/createpublisher).
