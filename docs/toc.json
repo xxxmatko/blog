@@ -1,15 +1,9 @@
 {
 	"value": [{
-		"title": "Lorem ipsum dolor",
-		"description": "Phasellus rhoncus dui eget ultricies ullamcorper. Integer vulputate diam a felis suscipit, sed egestas neque hendrerit. Sed ac hendrerit ex. Aliquam tincidunt eget eros in lobortis. Sed interdum, nisi eget tempor fringilla, sem erat imperdiet justo, ac tincidunt magna dui vel magna.",
-		"path": "lorem-ipsum-dolor",
-		"date": "2023-04-07T17:50:00.000Z",
-		"tags": ["bookcase", "c#", "javascript"]
-	}, {
-		"title": "Nulla condimentum ut",
-		"description": "Duis non finibus felis. Sed magna arcu, accumsan eu nulla non, porttitor malesuada risus. Aenean lectus diam, dignissim sit amet quam a, mattis tristique nibh.",
-		"path": "lorem-ipsum-dolor",
-		"date": "2023-04-04T14:50:00.000Z",
-		"tags": ["c#", "javascript", ".net", "ms sql"]
+		"title": "Geografické informačné systémy (CodeCon 2014)",
+		"description": "Dňa 20. 9. 2014 sa v Bratislave konala IT vývojárska konferencia CodeCon 2014 určená všetkým študentom, vývojárom a architektom v IT priemysle.",
+		"path": "codecon-2014",
+		"date": "2014-09-20T12:00:00.000Z",
+		"tags": ["codecon", "javascript", "gis", "esri", "maps"]
 	}]
 }
