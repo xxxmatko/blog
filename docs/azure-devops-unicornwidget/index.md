@@ -104,4 +104,4 @@ Po stlačení klávesovej skratky `Ctrl + Shift + B` zvolíme možnosť **build*
 
 ## Odkazy
 
-* [Add a dashboard widget](https://learn.microsoft.com/en-us/azure/devops/extend/develop/add-dashboard-widget?view=azure-devops)
+[Add a dashboard widget](https://learn.microsoft.com/en-us/azure/devops/extend/develop/add-dashboard-widget?view=azure-devops)
