@@ -12,7 +12,7 @@ V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konk
 Štruktúra projektu je nasledovná:
 
 ```
-├─── .vscode
+├── .vscode
 │  ├── settings.json
 │  └── tasks.json
 ├── grunt                      // Grunt build tasky 
