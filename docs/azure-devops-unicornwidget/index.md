@@ -1,6 +1,6 @@
-# Unicorn widget alebo ako začať s vývojom rozšírení pre Azure DevOps
+# Unicorn widget, alebo ako začať s vývojom rozšírení pre Azure DevOps
 
-Dashboard widget-y sa implementujú ako *[contributions](https://learn.microsoft.com/en-us/azure/devops/extend/develop/contributions-overview?view=azure-devops)* v rámci extension framework-u. Jedno rozšírenie môže obsahovať aj viac takýchto contributions. 
+Dashboard widgety sa implementujú, ako *[contributions](https://learn.microsoft.com/en-us/azure/devops/extend/develop/contributions-overview?view=azure-devops)* v rámci extension frameworku. Jedno rozšírenie môže obsahovať aj viac takýchto contributions. 
 
 V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konkrétne widget pre dashboard.
 
@@ -31,7 +31,7 @@ V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konk
 
 ### package.json
 
-Projekt je potrebné otvoriť v prostredí [Visual Studio Code](https://code.visualstudio.com/download). Po stlačení klávesovej skratky `Ctrl + Shift + B` sa zobrazí zoznam zadefinovaných task-ov, z ktorého zvolíme **restore**. Task spustí príkaz `npm install` a stiahne všetky dependencies zadefinované v súbore **package.json**. Súbor, okrem spomenutých dependencies, obsahuje aj ďalšie atribúty widgetu/rozšírenia, ktoré sa pri builde prenesú aj do manifestu:
+Projekt je potrebné otvoriť v prostredí [Visual Studio Code](https://code.visualstudio.com/download). Po stlačení klávesovej skratky `Ctrl + Shift + B` sa zobrazí zoznam zadefinovaných taskov, z ktorého zvolíme **restore**. Task spustí príkaz `npm install` a stiahne všetky dependencies zadefinované v súbore **package.json**. Súbor, okrem spomenutých dependencies, obsahuje aj ďalšie atribúty widgetu, ktoré sa pri builde prenesú aj do manifestu:
 
 * **version**: verzia rozšírenia (pri builde nahradí placehoder `#{Project.AssemblyInfo.Version}#`),
 * **name**: názov rozšírenia (pri builde nahradí placehoder `#{Extension.Id}#`),
@@ -87,19 +87,19 @@ Rozšírenie musí obsahovať [manifest](https://learn.microsoft.com/en-us/azure
 }
 ```
 
-Každa položka v zozname `contributions` definuje nasledovné [vlastnosti](https://learn.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops#contributions):
+Každá položka v zozname `contributions` definuje nasledovné [vlastnosti](https://learn.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops#contributions):
 
-* `id`: Jednoznačný identifikátor pre contribution, ktorý musí byť unikátny v rámci rozšírenia. Defaultne sa použije hodnota atribútu `name` zo súboru **package.json**.
+* `id`: Jednoznačný identifikátor pre contribution, ktorý musí byť unikátny v rámci rozšírenia. Predvolene sa použije hodnota atribútu `name` zo súboru **package.json**.
 * `type`: Pre contribution typu widget predstavuje hodnotu `ms.vss-dashboards-web`.
-* `targets`: Časť Azure DevOps, ktorú daná contribution rozširuje. Pre widgety, ktoré rozširujú dashboard predstavuje hodnotu `ms.vss-dashboards-web.widget-catalog`.
-* `properties`: Obsahuje objekt, ktorý definuje ďaľšie vlastnosti pre zvolený tyú contribution.
+* `targets`: Časť Azure DevOps, ktorú daná contribution rozširuje. Pre widgety, ktoré rozširujú dashboard, predstavuje hodnotu `ms.vss-dashboards-web.widget-catalog`.
+* `properties`: Obsahuje objekt, ktorý definuje ďalšie vlastnosti pre zvolený typ contribution.
 
 Položka `files` definuje zoznam súborov, ktoré majú byť súčasťou balíčka a dostupné prostredníctvom URL adresy.
 
 
 ## HTML stránka - unicornwidget.html
 
-HTML stránka definuje UI layout a obsahuje referencie na css a javascript súbory. Referencia na tento súbor je definovaná v manifeste v atribúte `contributions.properties.uri`.
+HTML stránka definuje UI layout. Obsahuje referencie na css a javascript súbory. Referencia na tento súbor je definovaná v manifeste, v atribúte `contributions.properties.uri`.
 
 HTML stránka sa pri zobrazení načítava prostredníctvom **iframe**, z čoho plynú aj určité obmedzenia.
 
@@ -123,7 +123,7 @@ HTML stránka sa pri zobrazení načítava prostredníctvom **iframe**, z čoho 
 
 ## Javascript - unicornwidget.js
 
-Javascript zabezpečuje inicializáciu widgetu a obsahuje aj samotnú biznis logiku. Nemusí byť nutne umiestnený v samostatnom súbore. Zároveň notifikuje extension framework o výsledku inicializácie. 
+Javascript zabezpečuje inicializáciu widgetu, a obsahuje aj samotnú biznis logiku, zároveň notifikuje extension framework o výsledku inicializácie. (pozn. Nemusí byť nutne umiestnený v samostatnom súbore.) 
 
 ```js
 (function (root, factory) {
@@ -163,7 +163,7 @@ Javascript zabezpečuje inicializáciu widgetu a obsahuje aj samotnú biznis log
 
 ## Vytvorenie inštalačného balíčka
 
-Po stlačení klávesovej skratky `Ctrl + Shift + B` zvolíme možnosť **build**, čím sa spustí build, ktorého výstupom bude inštalačný balíček - súbor s príponou `.vsix`. Následne je možné súbor nahrať do DevOps, prípadne do [Marketplace](https://marketplace.visualstudio.com/manage/createpublisher).
+Po stlačení klávesovej skratky `Ctrl + Shift + B` zvolíme možnosť **build**, čím sa spustí buildovací proces, ktorého výstupom bude inštalačný balíček, t.j. súbor s príponou `.vsix`. Následne je možné daný súbor nahrať do DevOps, prípadne do [Marketplace](https://marketplace.visualstudio.com/manage/createpublisher).
 
 
 ## Odkazy
