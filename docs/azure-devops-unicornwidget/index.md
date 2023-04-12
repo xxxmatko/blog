@@ -33,9 +33,9 @@ V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konk
 
 Projekt je potrebné otvoriť v prostredí [Visual Studio Code](https://code.visualstudio.com/download). Po stlačení klávesovej skratky `Ctrl + Shift + B` sa zobrazí zoznam zadefinovaných taskov, z ktorého zvolíme **restore**. Task spustí príkaz `npm install` a stiahne všetky dependencies zadefinované v súbore **package.json**. Súbor, okrem spomenutých dependencies, obsahuje aj ďalšie atribúty widgetu, ktoré sa pri builde prenesú aj do manifestu:
 
-* **version**: verzia rozšírenia (pri builde nahradí placehoder `#{Project.AssemblyInfo.Version}#`),
-* **name**: názov rozšírenia (pri builde nahradí placehoder `#{Extension.Id}#`),
-* **author**: meno autora rozšírenia (pri builde nahradí placehoder `#{Extension.Publisher}#`).
+* `version`: verzia rozšírenia (pri builde nahradí placehoder `#{Project.AssemblyInfo.Version}#`),
+* `name`: názov rozšírenia (pri builde nahradí placehoder `#{Extension.Id}#`),
+* `author`: meno autora rozšírenia (pri builde nahradí placehoder `#{Extension.Publisher}#`).
 
 
 ### extension.json 
