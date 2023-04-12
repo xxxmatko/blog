@@ -40,7 +40,7 @@ Projekt je potrebné otvoriť v prostredí [Visual Studio Code](https://code.vis
 
 ### extension.json 
 
-Rozšírenie musí obsahovať [manifest](https://learn.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops), ktorý definuje základné informácie o rozšírení (id, názov, autor, ...) a spôsob [akým vlastne rozširuje funkcionalitu](https://learn.microsoft.com/en-us/azure/devops/extend/reference/targets/overview?view=azure-devops)  Azure DevOps.
+Rozšírenie musí obsahovať [manifest](https://learn.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops), ktorý definuje základné informácie o rozšírení (id, názov, autor, ...) a spôsob, akým vlastne [rozširuje funkcionalitu](https://learn.microsoft.com/en-us/azure/devops/extend/reference/targets/overview?view=azure-devops)  Azure DevOps.
 
 ```json
 {
