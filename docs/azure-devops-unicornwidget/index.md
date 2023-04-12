@@ -1,6 +1,6 @@
 # Unicorn widget, alebo ako začať s vývojom rozšírení pre Azure DevOps
 
-Dashboard widgety sa implementujú, ako *[contributions](https://learn.microsoft.com/en-us/azure/devops/extend/develop/contributions-overview?view=azure-devops)* v rámci extension frameworku. Jedno rozšírenie môže obsahovať aj viac takýchto contributions. 
+Dashboard widgety sa implementujú, ako [contributions](https://learn.microsoft.com/en-us/azure/devops/extend/develop/contributions-overview?view=azure-devops), v rámci extension frameworku. Jedno rozšírenie môže obsahovať aj viac takýchto contributions. 
 
 V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konkrétne widget pre dashboard.
 
