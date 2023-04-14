@@ -2,7 +2,7 @@
 
 Dashboard widgety sa implementujú, ako [contributions](https://learn.microsoft.com/en-us/azure/devops/extend/develop/contributions-overview?view=azure-devops), v rámci extension frameworku. Jedno rozšírenie môže obsahovať aj viac takýchto contributions. 
 
-V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konkrétne widget pre dashboard.
+V tomto článku ti ukážem, ako vytvoriť rozšírenie pre Azure DevOps, konkrétne widget pre dashboard.
 
 > Zdrojový kód je možné stiahnuť [z nášho repozitára](https://github.com/slovanet/azure-devops-unicornwidget).
 
@@ -31,7 +31,7 @@ V tomto článku si ukážeme, ako vytvoriť rozšírenie pre Azure DevOps, konk
 
 ### package.json
 
-Projekt je potrebné otvoriť v prostredí [Visual Studio Code](https://code.visualstudio.com/download). Po stlačení klávesovej skratky `Ctrl + Shift + B` sa zobrazí zoznam zadefinovaných taskov, z ktorého zvolíme **restore**. Task spustí príkaz `npm install` a stiahne všetky dependencies zadefinované v súbore **package.json**. Súbor, okrem spomenutých dependencies, obsahuje aj ďalšie atribúty widgetu, ktoré sa pri builde prenesú aj do manifestu:
+Projekt je potrebné otvoriť v prostredí [Visual Studio Code](https://code.visualstudio.com/download). Po stlačení klávesovej skratky `Ctrl + Shift + B` sa zobrazí zoznam zadefinovaných taskov, z ktorého zvolíš **restore**. Task spustí príkaz `npm install` a stiahne všetky dependencies zadefinované v súbore **package.json**. Súbor, okrem spomenutých dependencies, obsahuje aj ďalšie atribúty widgetu, ktoré sa pri builde prenesú aj do manifestu:
 
 * `version`: verzia rozšírenia (pri builde nahradí placehoder `#{Project.AssemblyInfo.Version}#`),
 * `name`: názov rozšírenia (pri builde nahradí placehoder `#{Extension.Id}#`),
@@ -40,7 +40,7 @@ Projekt je potrebné otvoriť v prostredí [Visual Studio Code](https://code.vis
 
 ### extension.json 
 
-Rozšírenie musí obsahovať [manifest](https://learn.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops), ktorý definuje základné informácie o rozšírení (id, názov, autor, ...) a spôsob, akým vlastne [rozširuje funkcionalitu](https://learn.microsoft.com/en-us/azure/devops/extend/reference/targets/overview?view=azure-devops)  Azure DevOps.
+Rozšírenie musí obsahovať [manifest](https://learn.microsoft.com/en-us/azure/devops/extend/develop/manifest?view=azure-devops), ktorý definuje základné informácie o rozšírení (id, názov, autor, ...) a spôsob, akým vlastne [rozširuje funkcionalitu](https://learn.microsoft.com/en-us/azure/devops/extend/reference/targets/overview?view=azure-devops) Azure DevOps.
 
 ```json
 {
@@ -101,7 +101,7 @@ Položka `files` definuje zoznam súborov, ktoré majú byť súčasťou balíč
 
 HTML stránka definuje UI layout. Obsahuje referencie na css a javascript súbory. Referencia na tento súbor je definovaná v manifeste, v atribúte `contributions.properties.uri`.
 
-HTML stránka sa pri zobrazení načítava prostredníctvom **iframe**, z čoho plynú aj určité obmedzenia.
+HTML stránka sa pri zobrazení načítava prostredníctvom [iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe), z čoho plynú aj určité obmedzenia.
 
 ```html
 <!DOCTYPE html>
@@ -163,7 +163,7 @@ Javascript zabezpečuje inicializáciu widgetu, a obsahuje aj samotnú biznis lo
 
 ## Vytvorenie inštalačného balíčka
 
-Po stlačení klávesovej skratky `Ctrl + Shift + B` zvolíme možnosť **build**, čím sa spustí buildovací proces, ktorého výstupom bude inštalačný balíček, t.j. súbor s príponou `.vsix`. Následne je možné daný súbor nahrať do DevOps, prípadne do [Marketplace](https://marketplace.visualstudio.com/manage/createpublisher).
+Po stlačení klávesovej skratky `Ctrl + Shift + B` zvol možnosť **build**, čím sa spustí buildovací proces, ktorého výstupom bude inštalačný balíček, t.j. súbor s príponou `.vsix`. Následne je možné daný súbor nahrať do DevOps, prípadne do [Marketplace](https://marketplace.visualstudio.com/manage/createpublisher).
 
 
 ## Odkazy
