@@ -1,5 +1,11 @@
 {
 	"value": [{
+		"title": "Čo nám chýba v Azure DevOps? (CodeCon 2023)",
+		"description": "Dňa 11. 5. 2023 sa v Bratislave konala IT vývojárska konferencia CodeCon určená pre všetkých inteligentných, introverných, extrovertných a aj štipku uletených vývojárov.",
+		"path": "codecon-2023",
+		"date": "2023-05-12T12:00:00.000Z",
+		"tags": ["codecon", "azure", "devops", "extension", "javascript", "gantt", "diagrams", "wiki", "pdf"]
+	}, {
 		"title": "Unicorn widget, alebo ako začať s vývojom rozšírení pre Azure DevOps",
 		"description": "Dashboard widgety sa implementujú v rámci extension frameworku. V tomto článku ti ukážem, ako vytvoriť rozšírenie pre Azure DevOps, konkrétne widget pre dashboard.",
 		"path": "azure-devops-unicornwidget",
